@@ -85,7 +85,7 @@ var markers = [];
 var map;
 var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 var indexPosActual = 0;
-
+var drop = document.getElementById('drop');
 
 function initMap() {
 	
@@ -252,15 +252,15 @@ function deleteMarkers() {
 	markers = [];
 }
 
-function drop() {
+drop.addEventListener("click", function(){
+
 	clearMarkers();
 	//alert(indexPosActual);
 	for (var i = 0; i < neighborhoods.length; i++) {
 		console.log(neighborhoods[i]);
 		addMarkerWithTimeout(neighborhoods[i], i * 200);
 	}
-}
-
+});
 
 function addMarkerWithTimeout(neighborhood, timeout) {
 	window.setTimeout(function () {
