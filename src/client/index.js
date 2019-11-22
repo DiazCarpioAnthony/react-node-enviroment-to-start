@@ -7,8 +7,7 @@ const title = 'Webpack React Setup';
 console.log(title);
 
 render(
-    <div>
-        <h1>Hello React & Webpack</h1>
+    <div >
         <App />
     </div>,
     document.getElementById('app')

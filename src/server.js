@@ -5,12 +5,16 @@ import webpackConfig from '../webpack.config';
 
 // initializing packages
 const app = express();
+const path = require('path');
 
 // settings
 app.set('port', process.env.PORT || 3000);
 
 // middlwares
 app.use(webpackDevMiddleware(webpack(webpackConfig)));
+
+// static files
+app.use(express.static(path.join(__dirname, 'public'))); //Como no encuentra la ruta la vamos a setear con la direccion global
 
 // routes
 app.get('/', (req, res) => {
