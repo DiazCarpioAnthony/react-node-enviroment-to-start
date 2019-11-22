@@ -1,4 +1,4 @@
-//const socket = io();
+const socket = io();
 
 
 var neighborhoods = [
@@ -87,6 +87,7 @@ var image = 'https://developers.google.com/maps/documentation/javascript/example
 var indexPosActual = 0;
 var drop = document.getElementById('drop');
 
+
 function initMap() {
 	
 	if (navigator.geolocation) {
@@ -106,7 +107,7 @@ function initMap() {
 
 			// Adds a marker at the center of the map.
 			addMarker(positionActual, "ubicacion", true);
-/*
+
 			socket.emit('userCoordinates', {
 				latitude: positionActual.latitude,
 				longitude: positionActual.longitude
@@ -195,7 +196,10 @@ function addMarker(location, type, efect) {
 		var contentPopUp = location.content;
 
 		marker.addListener('click', function () {
-		    indexPosActual  = location.index;
+			indexPosActual  = location.index;
+			document.getElementById('posActual').value = indexPosActual;
+			
+			//alert(indexPosActual)
 			//var contentPopUp = contenido;
 			new google.maps.InfoWindow({
 				content: contentPopUp
@@ -255,7 +259,7 @@ function deleteMarkers() {
 drop.addEventListener("click", function(){
 
 	clearMarkers();
-	//alert(indexPosActual);
+	
 	for (var i = 0; i < neighborhoods.length; i++) {
 		console.log(neighborhoods[i]);
 		addMarkerWithTimeout(neighborhoods[i], i * 200);

@@ -6,18 +6,30 @@ class MenuLateral extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            indexPosActual: 0
+        };
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
+
+    handleClick() {
+        this.setState({
+            indexPosActual: document.getElementById("posActual").value
+        });
+    }
 
     render() {
         return (
             <div>
                 <div className="menu-lateral" id="menuToggle">
-                    <a href="#" id="iconToggle" className="btn-trigger"><i className="fa fa-caret-left"></i></a>
+                    <a href="#" id="iconToggle" className="btn-trigger" onClick={this.handleClick.bind(this)}><i className="fa fa-caret-left"></i></a>
                     <div className="menu">
                         <div className="contenido">
                             <div className="header-contenido">
-                                <h1>Reunión de organización HuayroTech  <a href="#" className="visible" id="abrir-popup"><i className="fa fa-pencil-alt"></i></a></h1>
+                                <h1> {this.state.indexPosActual} Reunión de organización HuayroTech  <a href="#" className="visible" id="abrir-popup"><i className="fa fa-pencil-alt"></i></a></h1>
                                 <img type="image/jpg" src="/img/evento.jpg" alt="asd"></img>
                             </div>
 

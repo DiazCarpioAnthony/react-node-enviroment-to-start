@@ -3,9 +3,18 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackConfig from '../webpack.config';
 
+const socketIO = require('socket.io');
+const http = require('http');
+
+
 // initializing packages
 const app = express();
 const path = require('path');
+const server = http.createServer(app);
+const io = socketIO(server);
+
+//sockets
+require('./sockets')(io);
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -26,6 +35,6 @@ app.get('/api', (req, res) => {
 });
 
 // starting the server
-app.listen(app.get('port'), () => {
+server.listen(app.get('port'), () => {
   console.log(`Server on port ${app.get('port')}`);
 });

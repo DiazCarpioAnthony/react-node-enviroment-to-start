@@ -25,7 +25,8 @@ class App extends Component {
       task: {
         title: 'My First component',
         done: true
-      }
+      },
+      indexPosActual: 0
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -40,13 +41,14 @@ class App extends Component {
     });
   }
 
-
   render() {
     return (
       <div style={{
         margin: 0,
         padding: 0
       }}>
+
+        <input type="hidden" id="posActual" name="posActual"></input>
 
         <MenuLateral />
 
@@ -59,7 +61,7 @@ class App extends Component {
             <span className="change2"><i className="fa fa-search-location"></i> eventos</span>
           </a>
         </div>
-        <div id="map"></div>
+        <div id="map" ></div>
 
 
         <PopUpEditar />

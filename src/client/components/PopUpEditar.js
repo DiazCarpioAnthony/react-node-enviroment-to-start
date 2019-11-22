@@ -34,27 +34,27 @@ class PopUpEditar extends Component {
                                             <input type="text" id="ubicacion_evento" name="ubicacion_evento"></input>
 
 
+                                            <label htmlFor="coordenada_X_evento">Escriba la coordenada X del evento</label>
+                                            <input type="text" id="coordenada_X_evento" name="coordenada_X_evento"></input>
+
+
+                                            <label htmlFor="coordenada_Y_evento">Escriba la coordenada Y del evento</label>
+                                            <input type="text" id="coordenada_Y_evento" name="coordenada_Y_evento"></input>
+
+
                                             <label htmlFor="enlace_evento">Escriba algun enlace de su evento</label>
                                             <input type="text" id="enlace_evento" name="enlace_evento"></input>
+
 
                                             <label htmlFor="telefono_evento">Escriba algun telefono para contactarse a su evento</label>
                                             <input type="text" id="telefono_evento" name="telefono_evento"></input>
 
-                                            <label htmlFor="fecha_evento">Escriba la fecha del evento</label>
-                                            <input type="text" id="fecha_evento" name="fecha_evento"></input>
-
 
                                             <label htmlFor="fecha_evento">Escriba la fecha del evento</label>
                                             <input type="text" id="fecha_evento" name="fecha_evento"></input>
 
-                                            <label htmlFor="fecha_evento">Escriba la fecha del evento</label>
-                                            <input type="text" id="fecha_evento" name="fecha_evento"></input>
-
-                                            <label htmlFor="fecha_evento">Escriba la fecha del evento</label>
-                                            <input type="text" id="fecha_evento" name="fecha_evento"></input>
 
                                             <input type="submit" className="btn-submit"></input>
-
                                         </div>
                                     </form>
                                 </div>
